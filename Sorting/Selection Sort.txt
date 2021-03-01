@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+void display(int arr[],int n)
+{
+	int i;
+	for(i=0;i<n;i++)
+	{
+		cout<<arr[i]<<" ";
+	}
+}
+void swap(int *a,int *b)
+{
+	int temp;
+	temp=*a;
+	*a=*b;
+	*b=temp;
+}
+int main()
+{
+	
+	int arr[]={2,5,3,1,2,5,7,8,3,1};
+	int n=10,i,j,temp,index;
+	for(i=0;i<n-1;i++)
+	
+	{
+		temp=arr[i],index=i;
+		for(j=i+1;j<n;j++)
+		{
+			if(arr[j]<temp)
+			{
+				temp=arr[j];
+				index =j;
+			}
+		}
+		swap(&arr[i],&arr[index]);
+	}
+	display(arr,n);
+}
